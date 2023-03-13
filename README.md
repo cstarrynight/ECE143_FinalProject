@@ -19,15 +19,17 @@ Based on the data from San Diego Traffic Volumes (2007-2022), we identified four
 
 # File Structure
 
-- [insert src folder name]: all of the code
-    - [insert San Diego Traffic Volumes (2007-2022) dataset]
-    - [insert San Francisco Traffic Count dataset]
+- `src/`: This folder contains all the code (python scripts and notebooks)
+    - `process_sd_data.py`: Preprocessing script for San Diego Traffic Volumes (2007-2022) dataset
+    - `process_sf_data.py`: Preprocessing script for San Francisco Traffic Count dataset
     - [insert Citibike Data (New York & New Jersey) dataset]
-- [insert datasets folder name]: original datasets
+- `datasets/`: original datasets
+    - `traffic_counts_datasd_v1.csv`: San Diego Traffic Volumes (2007-2022) dataset
+    - `sfmta_corridor_counts_2014-2018.csv`: San Francisco Traffic Count dataset
+
 - [insert jupyter ntbk name] * 4: takes SD data and cleans for plotting | plots SD | plots SF | plots NJ & NY
 
 
-- **[insert src folder name]**: 
 # Usage
 To run the project...
 
@@ -65,8 +67,83 @@ end
 - tqdm 4.65.0
 - folium 0.14.0
 
-Can be installed via the terminal such as:
-`pip install numpy`
+All of the dependencies can be installed in the terminal using the command:
+
+```
+pip install -r requirements.txt
+```
+
+# Preprocessing Datasets
+
+## Preprocessing the San Diego Traffic Volumes Dataset
+
+In this section, we will be preprocessing the San Diego traffic dataset. The raw dataset is located in `datasets/traffic_counts_datasd_v1.csv`. 
+
+To preprocess this dataset, we will run the script `process_sd_data.py` that is located in the `src/` folder
+
+1. Navigate to the src folder
+```
+cd src
+```
+
+2. In order to preprocess this dataset, we will run the `process_sd_data.py`. Make sure to also include the following flags:
+
+    i. `--input_dir`: Specify the path to the raw dataset to be processed.
+
+    ii. `--output_dir`: Specify the path to the new preprocessed dataset. Be sure to also include the csv file name.
+
+    iii. `--log_start_streets`: Specify the path to the text file that contains incorrect starting street names.
+
+    iv. `--log_end_streets`: Specify the path to the text file that contains the incorrect ending street names.
+
+    v. `--get_invalid_streets` (Optional): Boolean flag. Set this flag to True to get the list of incorrect starting and ending street names. 
+
+    **NOTES:** 
+    
+        a. The directory paths must be relative to the path from the `src/` folder since that is our current directory.
+        
+        b. Running the following proprocessing script can take about 1.5 hours since it calls the geocoding API which takes time to compute.
+
+    Here is an example of how to run the code to preprocess the San Diego traffic dataset.
+
+    ```
+    python process_sd_data.py --input_dir ../datasets/traffic_counts_datasd_v1.csv --output_dir ../processed_datasets/sd_data_processed.csv --log_start_streets ../logs/start_roads_to_fix.txt --log_end_streets ../logs/end_roads_to_fix.txt
+    ```
+    
+    The final preprocessed San Diego dataset will be located in the `processed_datasets` folder under the name `sd_data_preprocessed.csv`. 
+
+## Preprocessing the San Francisco Traffic Counts Dataset
+
+In this section, we will be preprocessing the San Francisco traffic dataset. The raw dataset is located in `datasets/sfmta_corridor_counts_2014-2018.csv`.
+
+We will be using the same method we used to preprocess the San Diego dataset.
+
+To preprocess this dataset, we will run the script `process_sf_data.py` that is located in the `src/` folder
+
+1. Navigate to the src folder
+```
+cd src
+```
+
+2. In order to preprocess this dataset, we will run the `process_sd_data.py`. Make sure to also include the following flags:
+
+    i. `--input_dir`: Specify the path to the raw dataset to be processed.
+
+    ii. `--output_dir`: Specify the path to the new preprocessed dataset. Be sure to also include the csv file name.
+
+    **NOTES:** 
+    
+        a. The directory paths must be relative to the path from the `src/` folder since that is our current directory.
+        
+        b. Running the following proprocessing script can take about 1.5 hours since it calls the geocoding API which takes time to compute.
+
+    Here is an example of how to run the code to preprocess the San Francisco traffic dataset.
+
+    ```
+    python3 process_sf_data.py --input_dir ../datasets/sfmta_corridor_counts_2014-2018.csv --output_dir ../processed_datasets/sf_data_processed.csv
+    ```
+    
+    The final preprocessed San Francisco dataset will be located in the `processed_datasets` folder under the name `sf_data_preprocessed.csv`. 
 
 
 # References
