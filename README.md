@@ -21,23 +21,58 @@ Based on the data from San Diego Traffic Volumes (2007-2022), we identified four
 
 - `src/`: This folder contains all the code (python scripts and notebooks)
     - `process_sd_data.py`: Preprocessing script for San Diego Traffic Volumes (2007-2022) dataset
+    - `process_sd_visuals.ipynb`: Script that takes processed data and generates coordinate data for visualization
+    - `display_sd.ipynb`: Script that displays the SD map
+
     - `process_sf_data.py`: Preprocessing script for San Francisco Traffic Count dataset
-    - [insert Citibike Data (New York & New Jersey) dataset]
+    - `process_sf_visuals.ipynb`: Script that takes processed data and generates coordinate data for visualization specifically for the SF dataset
+    - `display_sf.ipynb`: Script that displays the SF map
+
+    - `process_ny.ipynb`: Script that takes processed data and generates coordinate data for visualization specifically for the NY dataset. Code is based off: https://python.plainenglish.io/how-to-build-route-heatmaps-in-python-ebac363471d7
+    - `display_ny.ipynb`: Script that displays the NY map. Code is based off: https://python.plainenglish.io/how-to-build-route-heatmaps-in-python-ebac363471d7
+
+    
+
+- `processed_datasets/`: all the processed csv files
+    - `sd_data_processed.csv`: original dataset gets processed into this .csv file
+    - `sd_cleaned.csv`: this is sd_data_processed.csv after removing unusable datapoints or NaN values
+    - `sd_final.csv`: this is the final csv file containing all coordinates to be plotted for display_sd.ipynb
+    
+    - `sf_data_processed.csv`: original sf dataset gets processed into this .csv file
+    - `sf_cleaned.csv`: this takes sf_data_processed.csv and removes unusable or empty data values
+    - `sf_final.csv`: this is the final csv file containing all coordinates to be plotted for display_sf.ipynb
+
+    - `ny_processed.csv`: new york data after being processed from the original ny citibike dataset
+    - `ny_final.csv`: this is the final csv file containing all coordinates to be plotted for display_ny.ipynb
+
+
+
 - `datasets/`: original datasets
     - `traffic_counts_datasd_v1.csv`: San Diego Traffic Volumes (2007-2022) dataset
     - `sfmta_corridor_counts_2014-2018.csv`: San Francisco Traffic Count dataset
+    - `JC-202209-citibike-tripdata.csv`: New York citibike dataset
 
-- [insert jupyter ntbk name] * 4: takes SD data and cleans for plotting | plots SD | plots SF | plots NJ & NY
 
 
 # Usage
-To run the project...
+To display the SD map
 
-1. execute [insert python file here] from [insert src direcotry] for data manipulation to output [insert .csv file here]
-2. run [input corresponding jupyter ntbk] to output [insert visualization name]
-    .
-    .
-    .
+1. run process_sd_visuals.ipynb
+    i. doing so requires you to insert your own api key for routes and directions
+    ii. doing so will also take a long time
+    iii. the output "sd_final.csv" is already in ./src
+2. execute display_sd.ipynb from ./src which displays the data from sd_final.csv
+
+end
+
+To display the SF map
+
+1. run process_sf_visuals.ipynb
+    i. doing so requires you to insert your own api key for routes and directions
+    ii. doing so will also take a long time
+    iii. the output "sf_final.csv" is already in ./src
+2. execute display_sf.ipynb from ./src which displays the data from sf_final.csv
+
 end
 
 # Installations
