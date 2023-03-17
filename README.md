@@ -57,10 +57,14 @@ Based on the data from San Diego Traffic Volumes (2007-2022), we identified four
 # Usage
 To display the SD map
 
-1. run process_sd_visuals.ipynb
+1. run process_sd_visuals.ipyn
+
     i. doing so requires you to insert your own api key for routes and directions
+    
     ii. doing so will also take a long time
+
     iii. the output "sd_final.csv" is already in ./src
+
 2. execute display_sd.ipynb from ./src which displays the data from sd_final.csv
 
 end
@@ -68,10 +72,28 @@ end
 To display the SF map
 
 1. run process_sf_visuals.ipynb
+        
     i. doing so requires you to insert your own api key for routes and directions
+    
     ii. doing so will also take a long time
+
     iii. the output "sf_final.csv" is already in ./src
+
 2. execute display_sf.ipynb from ./src which displays the data from sf_final.csv
+
+end
+
+To display the NY map
+
+1. run process_ny.ipynb
+        
+    i. doing so requires you to insert your own api key for routes and directions
+    
+    ii. doing so will also take a long time
+
+    iii. the output "ny_final.csv" is already in ./src
+    
+2. execute display_ny.ipynb from ./src which displays the data from ny_final.csv
 
 end
 
