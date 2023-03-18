@@ -1,11 +1,3 @@
-Regarding GitHub Repository - Well documented, reusable Python module targeted at solving your proposal task. Follow all good coding practices and conventions discussed in class
-
-Include all your code as .py files (therefore remember to write modular code to make life easier) 
-Include 1 Jupyter notebook which shows all the visualizations you generated for your presentation.
-Include a readme file that explains your file structure, how to run your code, and name all third-party modules you are using. 
-Include the final presentation as a pdf file
-
-
 # City Visualization of Traffic Data Project Description
 
 Our final project for ECE 143 @ UC San Diego focused on city visualization of traffic data. Motivated by visualizing vehicle traffic in various cities, identifying popular hotspot destinations and any potential hotspots in cities, and estimated time to get to a destination, we visualized and analyzed traffic data on that gave insight into...
@@ -37,6 +29,8 @@ Based on the data from San Diego Traffic Volumes (2007-2022), we identified four
     - `sd_data_processed.csv`: original dataset gets processed into this .csv file
     - `sd_cleaned.csv`: this is sd_data_processed.csv after removing unusable datapoints or NaN values
     - `sd_final.csv`: this is the final csv file containing all coordinates to be plotted for display_sd.ipynb
+    - `sd_location_coordinates.csv`: contains latitute and longitude of each location, used for hotspot creation
+    - `sd_hotspots.csv`: contains the coordinates and size of each hotspot, determined by the traffic volume of each location.
     
     - `sf_data_processed.csv`: original sf dataset gets processed into this .csv file
     - `sf_cleaned.csv`: this takes sf_data_processed.csv and removes unusable or empty data values
