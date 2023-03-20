@@ -93,7 +93,7 @@ end
 
 # Installations
 
-**Before running this project, please install the following:**
+**Before running this project, please install the following Python libraries:**
 
 - pandas
 - numpy
