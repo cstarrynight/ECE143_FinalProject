@@ -51,7 +51,7 @@ Based on the data from San Diego Traffic Volumes (2007-2022), we identified four
 # Usage
 To display the SD map
 
-1. run process_sd_visuals.ipyn
+1. run process_sd_visuals.ipynb
 
     i. doing so requires you to insert your own api key for routes and directions
     
